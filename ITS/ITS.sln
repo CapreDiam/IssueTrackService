@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS", "ITS\ITS.csproj", "{A2A66F7B-D43C-4268-AFAE-1559BD23559B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.App", "ITS.App\ITS.App.csproj", "{5EACD499-8EE8-408F-B7BC-0E7E2FFEDC1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Data", "ITS.Data\ITS.Data.csproj", "{D3FE7277-C6B2-44E9-B04D-18E05CD7EBB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Inf", "ITS.Inf\ITS.Inf.csproj", "{A62E76ED-9A03-4A68-B9F3-F886DC0D7F2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Model", "ITS.Model\ITS.Model.csproj", "{ED4A1E53-E419-4600-A34C-01E7AEE86ADF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{13176D25-44CA-4EEC-BEDE-9389FE647BB1}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\Igor\Documents\Visual Studio 2012\Projects\create_entity.sql = C:\Users\Igor\Documents\Visual Studio 2012\Projects\create_entity.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2A66F7B-D43C-4268-AFAE-1559BD23559B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2A66F7B-D43C-4268-AFAE-1559BD23559B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2A66F7B-D43C-4268-AFAE-1559BD23559B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2A66F7B-D43C-4268-AFAE-1559BD23559B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EACD499-8EE8-408F-B7BC-0E7E2FFEDC1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EACD499-8EE8-408F-B7BC-0E7E2FFEDC1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EACD499-8EE8-408F-B7BC-0E7E2FFEDC1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EACD499-8EE8-408F-B7BC-0E7E2FFEDC1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3FE7277-C6B2-44E9-B04D-18E05CD7EBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3FE7277-C6B2-44E9-B04D-18E05CD7EBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3FE7277-C6B2-44E9-B04D-18E05CD7EBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3FE7277-C6B2-44E9-B04D-18E05CD7EBB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A62E76ED-9A03-4A68-B9F3-F886DC0D7F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A62E76ED-9A03-4A68-B9F3-F886DC0D7F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A62E76ED-9A03-4A68-B9F3-F886DC0D7F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A62E76ED-9A03-4A68-B9F3-F886DC0D7F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED4A1E53-E419-4600-A34C-01E7AEE86ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4A1E53-E419-4600-A34C-01E7AEE86ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4A1E53-E419-4600-A34C-01E7AEE86ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4A1E53-E419-4600-A34C-01E7AEE86ADF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
