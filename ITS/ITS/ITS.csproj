@@ -32,6 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RabbitMQ.Client, Version=3.6.5.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.3.6.5\lib\net45\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,11 +49,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Runner\ITSRunner.cs" />
+    <Compile Include="Launcher\Launcher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITS.Data\ITS.Data.csproj">
+      <Project>{d3fe7277-c6b2-44e9-b04d-18e05cd7ebb3}</Project>
+      <Name>ITS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITS.Inf\ITS.Inf.csproj">
+      <Project>{A62E76ED-9A03-4A68-B9F3-F886DC0D7F2B}</Project>
+      <Name>ITS.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITS.Model\ITS.Model.csproj">
+      <Project>{ed4a1e53-e419-4600-a34c-01e7aee86adf}</Project>
+      <Name>ITS.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

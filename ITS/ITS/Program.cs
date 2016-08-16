@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ITS
+﻿namespace ITS
 {
     class Program
     {
+       
         static void Main(string[] args)
         {
-
+            Launcher.Launcher launcher = new Launcher.Launcher();
+            launcher.start(args); 
         }
+
     }
 }
