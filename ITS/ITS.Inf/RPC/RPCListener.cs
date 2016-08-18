@@ -3,6 +3,7 @@ using ITS.Data.Dto;
 using ITS.Model.Event;
 using ITS.Model.RPC;
 using Nancy.Json;
+using Newtonsoft.Json;
 
 namespace ITS.Inf.RPC
 {
@@ -13,11 +14,17 @@ namespace ITS.Inf.RPC
         public void callback(string msg)
         {
             Console.WriteLine(msg);
-            JavaScriptSerializer request = new JavaScriptSerializer();
-            ITSEvent _event =
-                (ITSEvent)request.DeserializeObject(
-                    msg);
-            var result = _rpcClient.call(_event);
+            try
+            {
+                var _event = JsonConvert.DeserializeObject<ITSEvent>(msg);
+                _rpcClient.call(_event);
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
         }
+
+
     }
 }

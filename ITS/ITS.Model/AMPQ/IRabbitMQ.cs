@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using ITS.Model.Event;
 using RabbitMQ.Client.Impl;
 
-namespace ITS.Model.AMPQ
+namespace ITS.Inf.AMPQ
 {
     public interface IRabbitMQ
     {
@@ -15,7 +15,7 @@ namespace ITS.Model.AMPQ
 
         void bindExchange(String destanationExchange, String sourceExchange, String routingKey);
 
-        void publishMessage(String exchange, String routingKey, BasicProperties props, byte[] body);
+        void publishMessage(String exchange, String routingKey, BasicProperties props, string body);
 
         void listenToQueue(String queue, IListener listener);
 

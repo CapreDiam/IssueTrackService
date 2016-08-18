@@ -29,7 +29,7 @@ namespace ITS.Model.AMPQ
             ConnectionFactory factory = new ConnectionFactory();
           //  factory.HostName = "37.57.25.31";
 
-            factory.Uri = "amqp://admin:admin@178.137.30.143:5672//";
+            factory.Uri = "amqp://admin:admin@37.57.25.31:5672//";
 
             //factory.HostName = "37.57.25.31";
             //factory.Port = 5672;

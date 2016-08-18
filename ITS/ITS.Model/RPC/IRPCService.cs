@@ -1,15 +1,17 @@
 ﻿using System;
+using ITS.Data.Dto;
+using ITS.Data.Enum.Issue;
 
 namespace ITS.Model.RPC
 {
     public interface IRPCService
     {
-        string createProject(String data);
-        string addVersionToProject(String version, int projectId);
-        string addParticipiantToProject(String data);
-        string createIssue(String data);
-        string changeStatusIssue(String status, int projectId);
-        string addParticipiant(String data);
+        string createProject(ProjectDTO data);
+        string addVersionToProject(IssueDto version, int projectId);
+        string addParticipiantToProject(ParticipiantDto data, int idProject);
+        string createIssue(IssueDto data);
+        string changeStatusIssue(IssueDto status, int projectId);
+        string addParticipiant(ParticipiantDto data);
 
     }
 }

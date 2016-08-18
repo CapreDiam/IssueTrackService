@@ -1,35 +1,45 @@
-﻿namespace ITS.Model.RPC
+﻿using ITS.Data.Dto;
+using ITS.Data.Enum.Issue;
+
+namespace ITS.Model.RPC
 {
     public class RPCService:IRPCService
     {
-        public string createProject(string data)
+       
+        public string createProject(ProjectDTO data)
         {
-            throw new System.NotImplementedException();
+            //todo something
+            return "200";
         }
 
-        public string addVersionToProject(string version, int projectId)
+        public string addVersionToProject(IssueDto version, int projectId)
         {
-            throw new System.NotImplementedException();
+            //todo something
+            return "200";
         }
 
-        public string addParticipiantToProject(string data)
+        public string addParticipiantToProject(ParticipiantDto data, int idProject)
         {
-            throw new System.NotImplementedException();
+            //todo something
+            return "200";
         }
 
-        public string createIssue(string data)
+        public string createIssue(IssueDto data)
         {
-            throw new System.NotImplementedException();
+            //todo something
+            return "200";
         }
 
-        public string changeStatusIssue(string status, int projectId)
+        public string changeStatusIssue(IssueDto status, int projectId)
         {
-            throw new System.NotImplementedException();
+            //todo something
+            return "200";
         }
 
-        public string addParticipiant(string data)
+        public string addParticipiant(ParticipiantDto data)
         {
-            throw new System.NotImplementedException();
+            //todo something
+            return "200";
         }
     }
 }

@@ -13,7 +13,7 @@ D:\SIMCORD\TRAINING\C#\IssueTrackService\ITS\ITS\obj\Debug\ITS.exe
 D:\SIMCORD\TRAINING\C#\IssueTrackService\ITS\ITS\obj\Debug\ITS.pdb
 D:\SIMCORD\TRAINING\C#\IssueTrackService\ITS\ITS\bin\Debug\ITS.Data.dll
 D:\SIMCORD\TRAINING\C#\IssueTrackService\ITS\ITS\bin\Debug\ITS.Data.pdb
-D:\SIMCORD\TRAINING\C#\IssueTrackService\ITS\ITS\bin\Debug\Nancy.dll
-D:\SIMCORD\TRAINING\C#\IssueTrackService\ITS\ITS\bin\Debug\Nancy.xml
 D:\SIMCORD\TRAINING\C#\IssueTrackService\ITS\ITS\bin\Debug\ITS.Inf.dll
 D:\SIMCORD\TRAINING\C#\IssueTrackService\ITS\ITS\bin\Debug\ITS.Inf.pdb
+D:\SIMCORD\TRAINING\C#\IssueTrackService\ITS\ITS\bin\Debug\Newtonsoft.Json.dll
+D:\SIMCORD\TRAINING\C#\IssueTrackService\ITS\ITS\bin\Debug\Newtonsoft.Json.xml

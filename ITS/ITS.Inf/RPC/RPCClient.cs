@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
 using ITS.Data.Dto;
 using ITS.Data.Enum.Issue;
+using ITS.Inf.AMPQ.Messenger;
 using ITS.Model.RPC;
+using Newtonsoft.Json.Linq;
 
 namespace ITS.Inf.RPC
 {
@@ -9,6 +12,7 @@ namespace ITS.Inf.RPC
     {
 
         private readonly IRPCService _rpcService = new RPCService();
+        private readonly IMessenger _message = new Messenger();
 
         public string call(ITSEvent message)
         {
@@ -20,46 +24,75 @@ namespace ITS.Inf.RPC
             string result;
 
             var type = message.Type;
+            var _data = (JObject) message.Data;
             
             switch (type)
             {
                 case ITSTypeMessage.CREATE_PROJECT:
                 {
-                    result = _rpcService.createProject(message.ToString());
+                    var _project = getDto<ProjectDTO>(_data);
+                    result = _rpcService.createProject(_project);
                     break;
                 }
                 case ITSTypeMessage.ADD_VERSION_TO_PROJECT:
                 {
-                    result = _rpcService.addVersionToProject(message.ToString(), 1);
+                    var _issue = getDto<IssueDto>(_data);
+                    result = _rpcService.addVersionToProject(_issue, 1);
                     break;
                 }
                 case ITSTypeMessage.ADD_PARTICIPIANT_TO_PROJECT:
                 {
-                    result = _rpcService.addParticipiantToProject(message.ToString());
+                    var _participiant = getDto<ParticipiantDto>(_data);
+                    result = _rpcService.addParticipiantToProject(_participiant, 23);
                     break;
                 }
                 case ITSTypeMessage.CREATE_ISSUE:
                 {
-                    result = _rpcService.createIssue(message.ToString());
+                    var _issue = getDto<IssueDto>(_data);
+                    result = _rpcService.createIssue(_issue);
                     break;
                 }
                 case ITSTypeMessage.CHANGE_STATUS_ISSUE:
                 {
-                    result = _rpcService.changeStatusIssue(message.ToString(), 45);
+                    var _issue = getDto<IssueDto>(_data);
+                    result = _rpcService.changeStatusIssue(_issue, 45);
                     break;
                 }
                 case ITSTypeMessage.ADD_PARTICIPIANT:
                 {
-                    result = _rpcService.addParticipiant(message.ToString());
+                    var _participiant = getDto<ParticipiantDto>(_data);
+                    result = _rpcService.addParticipiant(_participiant);
                     break;
                 }
                 default:
                 {
-                    result = "ERROR";
+                    result = "{\"ERROR\":200}";
                    break; 
                 }
             }
+            
+
+            sendResult(result, message.CorelationId.ToString());
             return result;
+        }
+
+        public void sendResult(string result, string corellationID)
+        {
+            _message.sendRPCRequest(result, corellationID);
+        }
+
+        private T getDto<T>(JObject o)
+        {
+            try
+            {
+                return o.ToObject<T>();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                //todo send error
+            }
+            return default(T);
         }
     }
 }

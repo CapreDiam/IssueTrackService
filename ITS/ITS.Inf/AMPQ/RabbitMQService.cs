@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using ITS.Data.Dto;
+using ITS.Inf.AMPQ;
 using ITS.Model.AMPQ;
 using ITS.Model.Event;
 using ITS.Model.SMC;
@@ -16,6 +17,7 @@ namespace ITS.Model.AMPQ
     public class RabbitMQService:IRabbitMQ
     {
         private readonly StructureMapContainer _structureMapContainer = new StructureMapContainer();
+        private readonly Encoding unicode = Encoding.Unicode;
         private IModel channel;
 
         public delegate void ListenerDelegate(String message);
@@ -64,9 +66,11 @@ namespace ITS.Model.AMPQ
             channel.ExchangeBind(destination:destanationExchange,source:sourceExchange, routingKey:routingKey);
         }
 
-        public void publishMessage(string exchange, string routingKey, BasicProperties props, byte[] body)
+        public void publishMessage(string exchange, string routingKey, BasicProperties props, string body)
         {
-            channel.BasicPublish(exchange:exchange, routingKey:routingKey,basicProperties:props, body:body);
+            
+            var _body = unicode.GetBytes(body);
+            channel.BasicPublish(exchange:exchange, routingKey:routingKey,basicProperties:props, body:_body);
         }
 
         public void listenToQueue(string queue, IListener listener)

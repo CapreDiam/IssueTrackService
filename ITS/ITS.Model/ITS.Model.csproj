@@ -73,7 +73,6 @@
   <ItemGroup>
     <Compile Include="AMPQ\IRabbitMQ.cs" />
     <Compile Include="AMPQ\RabbitConfiguration.cs" />
-    <Compile Include="AMPQ\RabbitMQService.cs" />
     <Compile Include="Event\IListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RPC\IRPCClient.cs" />

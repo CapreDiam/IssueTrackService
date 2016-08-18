@@ -1,4 +1,5 @@
 ﻿using System;
+using ITS.Inf.AMPQ;
 using ITS.Inf.AMPQ.Messenger;
 using ITS.Inf.RPC;
 using ITS.Model.AMPQ;
@@ -42,10 +43,12 @@ namespace ITS.Launcher
             var _message = new Messenger();
             var _rpcClient = new RPCClient();
 
+
             _structureMapContainer.Inject<RabbitConfiguration>(_rabbitConfiguration);
             _structureMapContainer.Inject<RabbitMQService>(_rabbitService);
             _structureMapContainer.Inject<IMessenger>(_message);
             _structureMapContainer.Inject<IRPCClient>(_rpcClient);
+      
         }
 
         private void initializatinRunner()

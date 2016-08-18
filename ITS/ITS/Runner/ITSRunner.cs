@@ -48,7 +48,11 @@ namespace ITS.Runner
         private void listeningRunner()
         {
             var __rpcListenr = new RPCListener();
-            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.its001", "e.i.forward", "#", null, __rpcListenr);
+            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.ci.its001", "e.i.forward", "r.i.create-issue.its.its001", null, __rpcListenr);
+            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.avtp.its001", "e.i.forward", "r.i.add-version-to-project.its.its001", null, __rpcListenr);
+            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.aptp.its001", "e.i.forward", "r.i.add-participiant-to-project.its.its001", null, __rpcListenr);
+            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.csi.its001", "e.i.forward", "r.i.change-status-issue.its.its001", null, __rpcListenr);
+            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.ap.its001", "e.i.forward", "r.i.add-participiant.its.its001", null, __rpcListenr);
         }
     }
 }

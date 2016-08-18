@@ -10,7 +10,7 @@ namespace ITS.Inf.AMPQ.Messenger
 
         public Messenger()
         {
-            _rabbitMq = _structureMapContainer.GetObject<IRabbitMQ>();
+            _rabbitMq = _structureMapContainer.GetObject<RabbitMQService>();
         }
 
         public void sendStatus(string message, string routingKey)
@@ -18,9 +18,9 @@ namespace ITS.Inf.AMPQ.Messenger
             
         }
 
-        public void sendRPCRequest(string message)
+        public void sendRPCRequest(string message, string routingKey)
         {
-            throw new System.NotImplementedException();
+            _rabbitMq.publishMessage("e.i.pub.its.its001", routingKey, null, message);
         }
     }
 }
