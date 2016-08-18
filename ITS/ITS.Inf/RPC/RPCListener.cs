@@ -21,7 +21,7 @@ namespace ITS.Inf.RPC
             }
             catch (Exception exception)
             {
-                throw;
+                Console.WriteLine(exception.ToString());
             }
         }
 
