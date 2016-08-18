@@ -78,11 +78,14 @@ namespace ITS.Inf.RPC
 
         public void sendResult(string result, string corellationID)
         {
+            
             _message.sendRPCRequest(result, corellationID);
         }
 
         private T getDto<T>(JObject o)
         {
+            Console.WriteLine(typeof(T));
+
             try
             {
                 return o.ToObject<T>();
