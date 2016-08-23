@@ -2,14 +2,14 @@
 using ITS.Data.Dto;
 using ITS.Model.Event;
 using ITS.Model.RPC;
-using Nancy.Json;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
-namespace ITS.Inf.RPC
+namespace ITS.Inf.RPC.Listeners
 {
-    public class RPCListener:IListener
+    public class RPCListenerIssues:IListener
     {
-        private IRPCClient _rpcClient = new RPCClient();
+        private RPCBase _rpcClient = new RPCClientIssues();
 
         public void callback(string msg)
         {
@@ -17,7 +17,9 @@ namespace ITS.Inf.RPC
             try
             {
                 var _event = JsonConvert.DeserializeObject<ITSEvent>(msg);
-                _rpcClient.call(_event);
+                _event.Data = ((JObject) _event.Data).ToObject<IssueDto>();
+                
+                _rpcClient.Call(_event);
             }
             catch (Exception exception)
             {

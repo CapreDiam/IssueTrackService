@@ -1,5 +1,6 @@
 ﻿using System;
 using ITS.Inf.RPC;
+using ITS.Inf.RPC.Listeners;
 using ITS.Model.AMPQ;
 using ITS.Model.RPC;
 using ITS.Model.SMC;
@@ -47,12 +48,14 @@ namespace ITS.Runner
 
         private void listeningRunner()
         {
-            var __rpcListenr = new RPCListener();
-            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.ci.its001", "e.i.forward", "r.i.create-issue.its.its001", null, __rpcListenr);
-            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.avtp.its001", "e.i.forward", "r.i.add-version-to-project.its.its001", null, __rpcListenr);
-            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.aptp.its001", "e.i.forward", "r.i.add-participiant-to-project.its.its001", null, __rpcListenr);
-            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.csi.its001", "e.i.forward", "r.i.change-status-issue.its.its001", null, __rpcListenr);
-            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.ap.its001", "e.i.forward", "r.i.add-participiant.its.its001", null, __rpcListenr);
+            var rpcListenerIssues = new RPCListenerIssues();
+            var rpcListenerProject = new RPCListenerProject();
+            var rpcListenerParticipiant = new RPCListenerPartcipiant();
+            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.ci.its001", "e.i.forward", "r.i.create-issue.its.its001", null, rpcListenerIssues);
+            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.avtp.its001", "e.i.forward", "r.i.add-version-to-project.its.its001", null, rpcListenerProject);
+            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.aptp.its001", "e.i.forward", "r.i.add-participiant-to-project.its.its001", null, rpcListenerParticipiant);
+            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.csi.its001", "e.i.forward", "r.i.change-status-issue.its.its001", null, rpcListenerProject);
+            _rabbitMq.createAndListenToQueue("q.i.issue-track-service.ap.its001", "e.i.forward", "r.i.add-participiant.its.its001", null, rpcListenerIssues);
         }
     }
 }
