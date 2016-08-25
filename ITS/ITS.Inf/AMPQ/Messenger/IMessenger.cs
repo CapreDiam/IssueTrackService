@@ -2,7 +2,7 @@
 {
     public interface IMessenger
     {
-        void sendStatus(string message, string routingKey);
-        void sendRPCRequest(string message, string routingKey);
+        void SendStatus(string message, string routingKey);
+        void SendRpcRequest(string message, string routingKey);
     }
 }

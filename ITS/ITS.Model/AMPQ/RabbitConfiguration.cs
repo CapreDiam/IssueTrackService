@@ -18,7 +18,7 @@ namespace ITS.Model.AMPQ
             {
                 var factory = new ConnectionFactory
                 {
-                    Uri = ConfigurationManager.ConnectionStrings["RabbitConnection"].ConnectionString
+                    Uri = "amqp://admin:admin@37.57.25.31:5672//"
                 };
                 var connection = factory.CreateConnection();
                 _iModel = connection.CreateModel();

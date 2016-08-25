@@ -6,20 +6,20 @@ using Newtonsoft.Json.Linq;
 
 namespace ITS.Inf.RPC.Clients
 {
-    public class RPCClientProject:RPCBase
+    public class RpcClientProject:RpcBase
     {
 
-        private readonly IRPCServiceProject _rpcServiceProject = new RPCServiceProject();
+        private readonly IRpcServiceProject _rpcServiceProject = new RpcServiceProject();
 
-        public override string Call(ITSEvent message)
+        public override string Call(ItsEvent message)
         {
             Console.WriteLine(message);
 
             string result;
 
-            var _data = getDto<ProjectDTO>((JObject)message.Data);
+            var data = GetDto<ProjectDto>((JObject)message.Data);
 
-            result = _rpcServiceProject.createProject(_data);
+            result = _rpcServiceProject.CreateProject(data);
             return result;
         }
     }

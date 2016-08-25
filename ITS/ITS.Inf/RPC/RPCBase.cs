@@ -6,21 +6,21 @@ using Newtonsoft.Json.Linq;
 
 namespace ITS.Inf.RPC
 {
-    public abstract class RPCBase:IRPCClient
+    public abstract class RpcBase:IRpcClient
     {
 
         private readonly IMessenger _message = new Messenger();
 
 
-        public abstract string Call(ITSEvent message);
+        public abstract string Call(ItsEvent message);
 
-        public void SendResult(string result, string corellationID)
+        public void SendResult(string result, string corellationId)
         {
 
-            _message.sendRPCRequest(result, corellationID);
+            _message.SendRpcRequest(result, corellationId);
         }
 
-        protected T getDto<T>(JObject o)
+        protected T GetDto<T>(JObject o)
         {
             Console.WriteLine(typeof(T));
 

@@ -1,14 +1,12 @@
-﻿
-
-using ITS.Data.Dto;
+﻿using ITS.Data.Dto;
 
 namespace ITS.Model.RPC
 {
-    public interface IRPCServiceParticipiant
+    public interface IRpcServiceParticipiant
     {
-        string addParticipiantToProject(ParticipiantDto data, int idProject);
+        string AddParticipiantToProject(ParticipiantDto data, int idProject);
 
 
-        string addParticipiant(ParticipiantDto data);
+        string AddParticipiant(ParticipiantDto data);
     }
 }

@@ -2,8 +2,8 @@
 
 namespace ITS.Model.RPC
 {
-    public interface IRPCServiceProject
+    public interface IRpcServiceProject
     {
-        string createProject(ProjectDTO data);
+        string CreateProject(ProjectDto data);
     }
 }

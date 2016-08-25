@@ -34,20 +34,60 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework.BulkInsert, Version=6.0.2.8, Culture=neutral, PublicKeyToken=630a17433349cb76, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI, Version=6.0.0.7, Culture=neutral, PublicKeyToken=7ee2e825d201459e, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.MappingAPI.6.0.0.7\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GenericDbContext, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GenericDbContextAndIDbContext.0.5.0.1\lib\net40\GenericDbContext.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nancy.1.4.3\lib\net40\Nancy.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NuGet.Core, Version=2.8.50926.602, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Core.2.8.3\lib\net40-Client\NuGet.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RabbitMQ.Client, Version=3.6.5.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
       <HintPath>..\packages\RabbitMQ.Client.3.6.5\lib\net45\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SSW.Common, Version=1.0.5317.31877, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSW.Common.1.0.5317.31877\lib\net45\SSW.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SSW.Data.DbContext.Generator, Version=1.2.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSW.Data.DbContext.Generator.1.2.13.0\lib\net45\SSW.Data.DbContext.Generator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SSW.Data.EF, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSW.Data.EF.1.2.6.0\lib\net45\SSW.Data.EF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SSW.Data.Entities, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSW.Data.Entities.1.2.6.0\lib\net45\SSW.Data.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SSW.Data.Interfaces, Version=1.0.5422.20257, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSW.Data.EF.1.2.6.0\lib\net45\SSW.Data.Interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="StructureMap">
@@ -55,7 +95,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Hub, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Timothy.4.2.0\lib\System.Hub.dll</HintPath>
       <Private>True</Private>
@@ -64,6 +106,8 @@
       <HintPath>..\packages\Timothy.Web.4.2.0\lib\System.Hub.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,24 +117,65 @@
   <ItemGroup>
     <Compile Include="AMPQ\IRabbitMQ.cs" />
     <Compile Include="AMPQ\RabbitConfiguration.cs" />
+    <Compile Include="DbContext.cs" />
     <Compile Include="Event\IListener.cs" />
+    <Compile Include="ITSdb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITSdb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITSdb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITSdb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITSdb.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RPC\IRPCClient.cs" />
-    <Compile Include="RPC\IRPCService.cs" />
+    <Compile Include="RPC\IRPCServiceParticipiant.cs" />
+    <Compile Include="RPC\IRPCServiceIssue.cs" />
+    <Compile Include="RPC\IRPCServiceProject.cs" />
     <Compile Include="SMC\StructureMapContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="ITSdb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ITSdb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ITSdb.edmx.diagram">
+      <DependentUpon>ITSdb.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ITS.Data\ITS.Data.csproj">
       <Project>{D3FE7277-C6B2-44E9-B04D-18E05CD7EBB3}</Project>
       <Name>ITS.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ITSdb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ITSdb.edmx</DependentUpon>
+      <LastGenOutput>ITSdb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ITSdb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ITSdb.edmx</DependentUpon>
+      <LastGenOutput>ITSdb.cs</LastGenOutput>
+    </Content>
+    <Content Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

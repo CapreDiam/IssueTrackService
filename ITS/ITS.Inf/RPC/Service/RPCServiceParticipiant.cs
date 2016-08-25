@@ -4,16 +4,16 @@ using ITS.Model.RPC;
 
 namespace ITS.Inf.RPC.Service
 {
-    public class RPCServiceParticipiant:IRPCServiceParticipiant
+    public class RpcServiceParticipiant:IRpcServiceParticipiant
     {
        
 
-        public string addParticipiantToProject(ParticipiantDto data, int idProject)
+        public string AddParticipiantToProject(ParticipiantDto data, int idProject)
         {
             return "200";
         }
 
-        public string addParticipiant(ParticipiantDto data)
+        public string AddParticipiant(ParticipiantDto data)
         {
             return "200";
         }

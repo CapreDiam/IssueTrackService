@@ -2,6 +2,6 @@
 {
     public interface IListener
     {
-        void callback(string msg);
+        void Callback(string msg);
     }
 }

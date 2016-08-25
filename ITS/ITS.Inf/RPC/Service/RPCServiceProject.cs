@@ -4,13 +4,13 @@ using NLog;
 
 namespace ITS.Inf.RPC.Service
 {
-    public class RPCServiceProject:IRPCServiceProject
+    public class RpcServiceProject:IRpcServiceProject
     {
-        private static Logger Log = LogManager.GetCurrentClassLogger();
+        private static Logger _log = LogManager.GetCurrentClassLogger();
 
-        public string createProject(ProjectDTO data)
+        public string CreateProject(ProjectDto data)
         {
-            Log.Info("create project");
+            _log.Info("create project");
             return "200";
         }
     }

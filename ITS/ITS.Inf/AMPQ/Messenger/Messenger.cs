@@ -6,21 +6,21 @@ namespace ITS.Inf.AMPQ.Messenger
     public class Messenger:IMessenger
     {
         private readonly StructureMapContainer _structureMapContainer = new StructureMapContainer();
-        private IRabbitMQ _rabbitMq;
+        private IRabbitMq _rabbitMq;
 
         public Messenger()
         {
-            _rabbitMq = _structureMapContainer.GetObject<RabbitMQService>();
+            _rabbitMq = _structureMapContainer.GetObject<RabbitMqService>();
         }
 
-        public void sendStatus(string message, string routingKey)
+        public void SendStatus(string message, string routingKey)
         {
             
         }
 
-        public void sendRPCRequest(string message, string routingKey)
+        public void SendRpcRequest(string message, string routingKey)
         {
-            _rabbitMq.publishMessage("e.i.pub.its.its001", routingKey, null, message);
+            _rabbitMq.PublishMessage("e.i.pub.its.its001", routingKey, null, message);
         }
     }
 }

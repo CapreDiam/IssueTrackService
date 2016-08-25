@@ -1,17 +1,14 @@
-﻿using System;
-using ITS.Data.Dto;
-using ITS.Data.Enum.Issue;
+﻿using ITS.Data.Dto;
 
 namespace ITS.Model.RPC
 {
-    public interface IRPCService
+    public interface IRpcServiceIssues
     {
-        string createProject(ProjectDTO data);
-        string addVersionToProject(IssueDto version, int projectId);
-        string addParticipiantToProject(ParticipiantDto data, int idProject);
-        string createIssue(IssueDto data);
-        string changeStatusIssue(IssueDto status, int projectId);
-        string addParticipiant(ParticipiantDto data);
+       
+        string AddVersionToProject(IssueDto version, int projectId);
+        string CreateIssue(IssueDto data);
+        string ChangeStatusIssue(IssueDto status, int projectId);
+
 
     }
 }

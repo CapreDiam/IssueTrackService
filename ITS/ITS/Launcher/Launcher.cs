@@ -2,6 +2,7 @@
 using ITS.Inf.AMPQ;
 using ITS.Inf.AMPQ.Messenger;
 using ITS.Inf.RPC;
+using ITS.Inf.RPC.Clients;
 using ITS.Model.AMPQ;
 using ITS.Model.RPC;
 using ITS.Model.SMC;
@@ -13,47 +14,47 @@ namespace ITS.Launcher
     {
         private readonly StructureMapContainer _structureMapContainer = new StructureMapContainer();
         private RabbitConfiguration _rabbitConfiguration;
-        private ITSRunner _runner;
+        private ItsRunner _runner;
 
         
 
-        private void initialization()
+        private void Initialization()
         {
-            initializationRabbit();
-            initializatinRunner();
+            InitializationRabbit();
+            InitializatinRunner();
         }
 
-        public void start(string[] args)
+        public void Start(string[] args)
         {
-            initialization();
-            _runner.run();
+            Initialization();
+            _runner.Run();
         }
 
-        public void stop()
+        public void Stop()
         {
             //todo close all connection;
         }
 
-        private void initializationRabbit()
+        private void InitializationRabbit()
         {
             _rabbitConfiguration = new RabbitConfiguration();
             _rabbitConfiguration.Connect();
 
-            var _rabbitService = new RabbitMQService();
-            var _message = new Messenger();
-            var _rpcClient = new RPCClient();
+            var rabbitService = new RabbitMqService();
+            var message = new Messenger();
+            var rpcClient = new RpcClientIssues();
 
 
             _structureMapContainer.Inject<RabbitConfiguration>(_rabbitConfiguration);
-            _structureMapContainer.Inject<RabbitMQService>(_rabbitService);
-            _structureMapContainer.Inject<IMessenger>(_message);
-            _structureMapContainer.Inject<IRPCClient>(_rpcClient);
+            _structureMapContainer.Inject<RabbitMqService>(rabbitService);
+            _structureMapContainer.Inject<IMessenger>(message);
+            _structureMapContainer.Inject<IRpcClient>(rpcClient);
       
         }
 
-        private void initializatinRunner()
+        private void InitializatinRunner()
         {
-            _runner = new ITSRunner();
+            _runner = new ItsRunner();
         }
 
     }

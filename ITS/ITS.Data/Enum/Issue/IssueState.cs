@@ -4,7 +4,7 @@
     {
         New = 0,
         Open = 1,
-        In_Process = 2,
+        InProcess = 2,
         Done = 3,
         Close = 4
     }

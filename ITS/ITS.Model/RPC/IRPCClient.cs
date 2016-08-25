@@ -2,10 +2,10 @@
 
 namespace ITS.Model.RPC
 {
-    public interface IRPCClient
+    public interface IRpcClient
     {
-        string Call(ITSEvent message);
-        void SendResult(string result, string corellationID);
+        string Call(ItsEvent message);
+        void SendResult(string result, string corellationId);
 
     }
 }

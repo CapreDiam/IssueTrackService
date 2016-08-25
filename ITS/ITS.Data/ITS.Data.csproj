@@ -50,11 +50,11 @@
   <ItemGroup>
     <Compile Include="Dto\IssueDto.cs" />
     <Compile Include="Dto\ITSEvent.cs" />
+    <Compile Include="Dto\ParticipiantDto.cs" />
     <Compile Include="Dto\ProjectDTO.cs" />
     <Compile Include="Enum\Issue\IssueState.cs" />
     <Compile Include="Enum\Issue\IssueType.cs" />
     <Compile Include="Enum\Issue\ITSTypeMessage.cs" />
-    <Compile Include="Enum\Issue\ParticipiantDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

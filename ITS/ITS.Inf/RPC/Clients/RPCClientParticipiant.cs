@@ -1,28 +1,25 @@
 ﻿using System;
 using ITS.Data.Dto;
-using ITS.Inf.AMPQ.Messenger;
+
 using ITS.Inf.RPC.Service;
 using ITS.Model.RPC;
 using Newtonsoft.Json.Linq;
 
 namespace ITS.Inf.RPC.Clients
 {
-    public class RPCClientParticipiant:RPCBase
+    public class RpcClientParticipiant:RpcBase
     {
-        private readonly IRPCServiceParticipiant _irpcServiceParticipiant = new RPCServiceParticipiant();
+        private readonly IRpcServiceParticipiant _irpcServiceParticipiant = new RpcServiceParticipiant();
 
-        public override string Call(ITSEvent message)
+        public override string Call(ItsEvent message)
         {
             Console.WriteLine(message);
 
-            string result;
+            var data = GetDto<ParticipiantDto>((JObject)message.Data);
+            data.Validate();
 
-            var _data = getDto<ParticipiantDto>((JObject)message.Data);
-
-
-            result = _irpcServiceParticipiant.addParticipiant(_data); 
-            //    break;
-
+            
+            var result = _irpcServiceParticipiant.AddParticipiant(data); 
             return result;
         }
     }

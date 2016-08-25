@@ -4,24 +4,24 @@ using NLog;
 
 namespace ITS.Inf.RPC.Service
 {
-    public class RpcServiceIssue:IRPCServiceIssue
+    public class RpcServiceIssue:IRpcServiceIssues
     {
 
-        private static Logger Log = LogManager.GetCurrentClassLogger();
+        private static Logger _log = LogManager.GetCurrentClassLogger();
 
-        public string addVersionToProject(IssueDto version, int projectId)
+        public string AddVersionToProject(IssueDto version, int projectId)
         {
             //todo something
             return "200";
         }
 
-        public string createIssue(IssueDto data)
+        public string CreateIssue(IssueDto data)
         {
             //todo something
             return "200";
         }
 
-        public string changeStatusIssue(IssueDto status, int projectId)
+        public string ChangeStatusIssue(IssueDto status, int projectId)
         {
             //todo something
             return "200";
